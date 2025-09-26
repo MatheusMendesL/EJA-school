@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Estudadores</title>
+    <meta
+      name="description"
+      content="Faça login na plataforma Estudadores para continuar seus estudos"
+    />
+    <link rel="stylesheet" href="static/css/global.css" />
+    <script src="static/js/darkMode.js"></script>
+    <script src="static/js/login.js"></script>
+  </head>
+  <body class="bg-gray-100 min-vh-100 d-flex flex-column">
+    <main
+      class="flex-grow-1 d-flex justify-content-center align-items-center px-4 py-5"
+      role="main"
+    >
+      <form
+        class="bg-white rounded-3 border border-gray p-5 w-100"
+        style="max-width: 448px"
+        autocomplete="off"
+        role="form"
+        aria-labelledby="login-title"
+        novalidate
+      >
+        <h2
+          id="login-title"
+          class="text-center text-dark fw-semibold fs-5 mb-2"
+        >
+          Bem-vindo de volta
+        </h2>
+        <p class="text-center text-secondary mb-5">
+          Entre para continuar seus estudos
+        </p>
+
+        <div class="mb-4">
+          <label for="email" class="form-label text-dark fw-semibold fs-7 mb-1"
+            >E-mail</label
+          >
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            class="form-control text-secondary fs-7 placeholder-gray-400 border border-transparent rounded-1 py-2 px-3 outline-none"
+            required
+            aria-required="true"
+            aria-describedby="email-help"
+            autocomplete="email"
+          />
+          <div id="email-help" class="visually-hidden">
+            Digite seu endereço de e-mail
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label
+            for="password"
+            class="form-label text-dark fw-semibold fs-7 mb-1"
+            >Senha</label
+          >
+          <div class="position-relative">
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Digite sua senha"
+              class="form-control text-secondary fs-7 placeholder-gray-400 border border-transparent rounded-1 py-2 px-3 pr-5 outline-none"
+            />
+          </div>
+          <div id="password-help" class="visually-hidden">Digite sua senha</div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-100 btn btn-green fw-semibold fs-7 rounded-3 py-2 mb-5"
+          aria-describedby="submit-help"
+        >
+          Entrar
+        </button>
+        <div id="submit-help" class="visually-hidden">
+          Clique para fazer login na plataforma
+        </div>
+
+        <p class="text-center text-secondary fs-8 mb-1">Não tem uma conta?</p>
+        <p
+          class="text-center text-green-600 fs-8 fw-semibold cursor-pointer"
+          onclick="event.preventDefault(); router.navigate('/signup');"
+        >
+          Criar conta
+        </p>
+      </form>
+    </main>
+  </body>
+</html>

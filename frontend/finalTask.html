@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lição Concluída - Estudadores</title>
+
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100 p-3">
+  <main class="container-fluid px-3" style="max-width: 400px;">
+    <div class="text-center mb-4">
+      <div class="icon-circle mx-auto">
+        <i class="fas fa-check-circle text-white fa-2x"></i>
+      </div>
+      <h1 class="h6 fw-semibold mb-0">Lição Concluída!</h1>
+    </div>
+
+    <section class="section-xp text-center p-3 mb-4">
+      <div class="d-flex justify-content-center align-items-center gap-1 mb-1">
+        <i class="far fa-star"></i>
+        <span class="fw-semibold fs-5">+ <span id="xp"></span></span>
+        <span class="text-xs">XP</span>
+      </div>
+      <p class="text-xs mb-0">Experiência ganha nesta lição</p>
+    </section>
+
+    <section class="section-performance p-3 mb-4 text-center">
+      <div class="d-flex align-items-center gap-2 mb-2 justify-content-center">
+        <i class="fas fa-bullseye text-warning text-xs"></i>
+        <span>Seu desempenho</span>
+      </div>
+      <div class="mb-2">
+        <span class="fw-bold fs-5" id="percentage"></span>
+      </div>
+      <div class="d-flex justify-content-between text-xxs mb-1">
+        <span>Acertos</span>
+        <span> <span id="correct"></span> de 10</span>
+      </div>
+      <div class="progress progress-custom mb-2">
+        <div class="progress-fill""></div>
+      </div>
+      <span class=" alert" id="messageAfter"></span>
+    </section>
+
+    <section class="section-continue p-3 mb-4">
+      <h2 class="fw-semibold mb-2 text-xs">Continue aprendendo</h2>
+      <ul class="list-unstyled mb-0">
+        <li class="d-flex align-items-center gap-2 text-success mb-1">
+          <i class="fas fa-check-circle text-success text-xxs"></i>
+          <span>Lição concluída com sucesso</span>
+        </li>
+        <li class="d-flex align-items-center gap-2 text-success mb-1">
+          <i class="far fa-star text-success text-xxs"></i>
+          <span>XP adicionado ao seu progresso</span>
+        </li>
+      </ul>
+    </section>
+
+    <button class="btn btn-custom-primary w-100 mb-2 d-flex align-items-center justify-content-center gap-2 btnHome">
+      <i class="fas fa-home text-xs"></i> Voltar ao início
+    </button>
+  </main>
+
+</body>

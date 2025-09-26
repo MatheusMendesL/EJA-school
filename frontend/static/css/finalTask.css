@@ -1,0 +1,89 @@
+.icon-circle {
+    background-color: #00b386;
+    border-radius: 50%;
+    padding: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-xp {
+    border: 1px solid #00b386;
+    border-radius: 0.5rem;
+    color: #00b386;
+}
+
+.section-performance,
+.section-continue {
+    border: 1px solid #b3b3b3;
+    border-radius: 0.5rem;
+}
+
+.progress-custom {
+    background-color: #d9f0e8;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.progress-fill {
+    background-color: #00b386;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+.btn-custom-primary {
+    background-color: #00b386;
+    color: #fff;
+}
+
+.btn-custom-secondary {
+    border: 1px solid #00b386;
+    color: #00b386;
+    background-color: #fff;
+}
+
+.text-xs {
+    font-size: 0.625rem;
+}
+
+.text-xxs {
+    font-size: 0.5rem;
+}
+
+.alert {
+  display: inline-block !important;
+  padding: 0.2rem 0.4rem !important;
+  font-size: 0.75rem !important;
+  border-radius: 0.25rem !important;
+}
+
+/* Responsividade para finalTask */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  main {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .btn-custom-primary {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .section-xp,
+  .section-performance,
+  .section-continue {
+    padding: 1rem !important;
+  }
+}

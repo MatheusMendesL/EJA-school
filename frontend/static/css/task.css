@@ -1,0 +1,117 @@
+body {
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+  color: #222222;
+}
+
+.lesson-header {
+  color: #7f7f7f;
+  user-select: none;
+}
+
+.lesson-header button:hover {
+  color: #222222;
+}
+
+.card-custom {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  user-select: none;
+}
+
+.progress-bg {
+  background-color: #c6f1e7;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.progress-fill {
+  background-color: #00b37e;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.form-check-label {
+  display: block;
+  border: 1px solid #9ca3af;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 1s ease;
+}
+
+.form-check-input:checked + .form-check-label {
+  font-weight: 600;
+  border: 1px solid #00b37e;
+}
+
+.btn-custom {
+  background-color: #7dd9c1;
+  color: white;
+}
+
+.btn-custom:hover {
+  background-color: #6cc9b1;
+}
+
+.correct {
+  border: 1px solid #2ea043 !important;
+  color: #2ea043 !important;
+  background-color: rgba(46, 160, 67, 0.1) !important;
+}
+
+.error {
+  border: 1px solid #f85149 !important;
+  color: #f85149 !important;
+  background-color: rgba(248, 81, 73, 0.1) !important;
+}
+
+/* Cores unificadas para modo claro e escuro */
+
+/* Estilos específicos para modo escuro - maior especificidade */
+html[data-theme="dark"] .card-custom .form-check-label.correct {
+  border: 1px solid #2ea043 !important;
+  color: #2ea043 !important;
+  background-color: rgba(46, 160, 67, 0.2) !important;
+}
+
+html[data-theme="dark"] .card-custom .form-check-label.error {
+  border: 1px solid #f85149 !important;
+  color: #f85149 !important;
+  background-color: rgba(248, 81, 73, 0.2) !important;
+}
+
+/* Responsividade para task */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .card-custom {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .card-custom {
+    margin-bottom: 0.75rem;
+    padding: 1rem !important;
+  }
+  
+  .form-check-label {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .btn-custom {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
+}

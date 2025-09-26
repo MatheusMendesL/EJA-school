@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lições - Estudadores</title>
+    <meta name="description" content="Selecione o ano e tema para continuar seus estudos">
+    
+</head>
+<body class="bg-light d-flex flex-column min-vh-100 px-3 py-4">
+
+  <header class="d-flex justify-content-between align-items-center mb-4 mt-5 px-3">
+    <h1 class="h4 fw-semibold">
+      Selecione o ano e tema para <span id="matter" aria-label="Matéria selecionada"></span>
+    </h1>
+    <div class="p-2">
+      <a href="#" class="d-inline-flex align-items-center text-secondary text-sm fw-normal text-decoration-none"
+        onclick="event.preventDefault(); router.navigate('/home');" role="button" aria-label="Voltar para a página inicial">
+        <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>
+        <span class="d-none d-sm-inline">Voltar</span>
+      </a>
+    </div>
+  </header>
+
+
+  <main class="container-fluid px-3 flex-grow-1" role="main">
+
+    <section class="card mb-4 shadow-sm" role="region" aria-labelledby="year-selection-title">
+      <div class="card-body">
+        <h2 id="year-selection-title" class="h6 fw-medium mb-3">Selecione o ano</h2>
+        <div class="d-flex gap-3" role="group" aria-labelledby="year-selection-title">
+          <button class="btn-year btn btn-outline-secondary flex-fill" data-year="1" aria-pressed="true" id="1"
+                  aria-label="Selecionar 1º Ensino Médio" role="radio" aria-checked="true">
+            1º Ensino Médio
+          </button>
+          <button class="btn-year btn btn-outline-secondary flex-fill" data-year="2" aria-pressed="false" id="2"
+                  aria-label="Selecionar 2º Ensino Médio" role="radio" aria-checked="false">
+            2º Ensino Médio
+          </button>
+          <button class="btn-year btn btn-outline-secondary flex-fill" data-year="3" aria-pressed="false" id="3"
+                  aria-label="Selecionar 3º Ensino Médio" role="radio" aria-checked="false">
+            3º Ensino Médio
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="card mb-4 shadow-sm" role="region" aria-labelledby="topics-title">
+      <div class="card-body">
+        <nav aria-label="Navegação estrutural" class="mb-3 small text-muted">
+          Temas de <span id="matter-breadcrumb" aria-label="Matéria atual"></span> ›
+          <span id="breadcrumb-year" class="fw-semibold" aria-live="polite">
+            <span id="year" aria-label="Ano selecionado"></span> Ensino Médio
+          </span>
+        </nav>
+        <h2 id="topics-title" class="h6 fw-medium mb-3 visually-hidden">Temas disponíveis</h2>
+        <div class="row g-3 mt-3 d-flex justify-content-around" id="topics" role="list" aria-labelledby="topics-title">
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>

@@ -1,0 +1,74 @@
+/* Botões de ano e tema */
+.btn-year,
+.btn-topic {
+  border: 1.5px solid #ced4da;
+  color: #212529;
+  background-color: #fff;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Botão principal personalizado */
+.btn-teal {
+  background-color: #15a589;
+  color: #fff;
+}
+.btn-teal:hover {
+  background-color: #0f6e5c;
+}
+
+/* Acessibilidade - foco */
+button:focus-visible {
+  outline: 3px solid #15a589;
+  outline-offset: 3px;
+}
+
+.btnIncomplete {
+  background-color: #a10000;
+  transition: 1s ease background-color;
+}
+
+.btnIncomplete:hover {
+  background-color: #7d0000;
+}
+
+/* Responsividade para lessons */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-year, .btn-topic {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .card {
+    margin-bottom: 0.75rem;
+  }
+  
+  .btn-year, .btn-topic {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .btn-teal {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
+}

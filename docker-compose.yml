@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: meu-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: estudadores
+      MYSQL_USER: estudadores_user
+      MYSQL_PASSWORD: matheus
+    ports:
+      - "3306:3306"
+    networks:
+      - minha-rede
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+    container_name: meu-backend-container
+    environment:
+      HOST: "mysql"
+      PORT: "3306"
+      USER: "estudadores_user"
+      PASS: "matheus"
+      DATABASE: "estudadores"
+    ports:
+      - "3000:3000"
+    networks:
+      - minha-rede
+    volumes:
+      - ./backend:/app        # Mapeia código local para dentro do container
+      - /app/node_modules     # Garante que node_modules do container não seja sobrescrito
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+networks:
+  minha-rede:
+
+volumes:
+  mysql-data:
+

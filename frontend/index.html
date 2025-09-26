@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudadores</title>
+    <base href="/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./static/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/global.css">
+    <script src="./static/js/darkMode.js"></script>
+    <script src="./static/js/accessibility.js"></script>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./static/img/logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div id="app" role="main"></div>
+
+    <script src="https://unpkg.com/navigo"></script>
+
+    <script>
+
+
+        function finalTask() {
+            document.querySelector('.btnHome').addEventListener('click', () => {
+                router.navigate('/home')
+            })
+
+            const urlParams = window.location.search;
+            const params = new URLSearchParams(urlParams);
+
+            const correct = params.get("corrects")
+            const xp = params.get('xp')
+
+            document.querySelector("#xp").textContent = xp
+
+            const percentage = `${correct}0%`
+
+            document.querySelector('.progress-fill').style.width = percentage
+            document.querySelector('#percentage').textContent = percentage
+
+            document.querySelector("#correct").textContent = correct
+
+            if (correct <= 3) {
+                //badge-danger, warning, success
+                document.querySelector('#messageAfter').classList.add('alert-danger')
+                document.querySelector('#messageAfter').textContent = "Estude mais!"
+            } else if (correct <= 6) {
+                document.querySelector('#messageAfter').classList.add('alert-warning')
+                document.querySelector('#messageAfter').textContent = "Precisa melhorar!"
+            } else {
+                document.querySelector('#messageAfter').classList.add('alert-success')
+                document.querySelector('#messageAfter').textContent = "Muito bem!"
+            }
+        }
+        const router = new Navigo('/');
+        // pages that not is necessary the js and css
+
+        const pages = ['initial']
+        const funs = {
+            home: () => home(),
+            lessons: () => lessons(),
+            task: () => task(),
+            login: () => login(),
+            signup: () => signup()
+        }
+
+        async function loadPage(page, title = 'estudadores.edu') {
+
+            try {
+                const res = await fetch(`/${page}.html`);
+                if (!res.ok) throw new Error("Página não encontrada");
+                const html = await res.text();
+                document.querySelector("#app").innerHTML = html;
+                loadCSS(page)
+                loadJS(page)
+                router.updatePageLinks();
+                document.title = title;
+                if (page == 'finalTask') {
+                    finalTask()
+                }
+            } catch (err) {
+                document.querySelector("#app").innerHTML = "<h1>Erro ao carregar página</h1>";
+                console.error(err);
+            }
+        }
+
+        function loadCSS(page) {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = "/static/css/" + page + ".css";
+            link.type = "text/css";
+            document.head.appendChild(link);
+        }
+
+        function loadJS(page) {
+            if (pages.includes(page)) {
+                return
+            }
+
+            if (document.querySelector(`script[src="/static/js/${page}.js"]`)) {
+                if (funs[page]) funs[page]()
+                console.clear()
+                return;
+            }
+
+            const script = document.createElement("script");
+            script.src = "/static/js/" + page + ".js";
+            script.type = "text/javascript";
+            document.body.appendChild(script);
+        }
+
+
+        router
+            .on('/login', () => loadPage('login'))
+            .on('/signup', () => loadPage('signup'))
+            .on('/home', () => loadPage('home'))
+            .on('/lessons', () => loadPage('lessons'))
+            .on('/task', () => loadPage('task'))
+            .on('/finalTask', () => loadPage('finalTask'))
+            .notFound(() => document.querySelector("#app").innerHTML = "<h1>404 - Página não encontrada</h1>");
+
+        if (!localStorage.getItem('token')) {
+            router.navigate('/signup')
+        } else {
+            router.navigate('/home')
+        }
+
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js")
+                .then(() => console.log("Service Worker registrado!"))
+                .catch(err => console.error("Erro no SW:", err));
+        }
+
+        router.resolve();
+    </script>
+    <script src="./static/bootstrap/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

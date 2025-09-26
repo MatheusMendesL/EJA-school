@@ -1,0 +1,60 @@
+body {
+    background-color: #f4f5f5;
+}
+
+.bg-main-green {
+    background-color: #00bb8f;
+}
+
+.bg-light-green {
+    background-color: #d9f0ea;
+}
+
+.text-main-green {
+    color: #00bb8f;
+}
+
+.border-main-green {
+    border-color: #00bb8f !important;
+}
+
+.btn-main-green {
+    background-color: #00bb8f;
+    color: white;
+}
+
+.btn-main-green:hover {
+    background-color: #00a97a;
+}
+
+/* Responsividade para initial */
+@media (max-width: 768px) {
+    main {
+        max-width: 100% !important;
+        padding: 1rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding: 0.5rem;
+    }
+    
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .fs-4 {
+        font-size: 1.5rem !important;
+    }
+    
+    .fs-5 {
+        font-size: 1.25rem !important;
+    }
+}

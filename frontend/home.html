@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Estudadores</title>
+    <meta name="description" content="Página inicial da plataforma Estudadores - Continue seus estudos de onde parou">
+    <link rel="stylesheet" href="static/css/global.css">
+    <script src="static/js/darkMode.js"></script>
+</head>
+<body
+  class="bg-[#f5f6f6] font-sans text-[13px] text-[#4a4a4a] min-h-screen d-flex justify-content-center align-items-center py-5">
+  <main class="container-fluid px-3" role="main">
+    <header class="d-flex justify-content-between align-items-center mb-3 pt-4">
+      <div>
+        <h1 class="fw-semibold fs-6 text-dark">Olá, <span id="name" aria-label="Nome do usuário"></span></h1>
+        <p class="fs-7 text-secondary">Continue seus estudos de onde parou</p>
+      </div>
+    </header>
+
+    <section class="bg-white rounded-3 border border-gray p-4 mb-4" role="region" aria-labelledby="progress-title">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <div class="d-flex align-items-center gap-3">
+          <div class="d-flex align-items-center justify-content-center text-white rounded-circle"
+            style="width: 40px; height: 40px; background-color: #00b386;" role="img" aria-label="Ícone de estrela">
+            <i class="fas fa-star fs-6" aria-hidden="true"></i>
+          </div>
+          <div>
+            <p class="fw-semibold fs-6 text-dark mb-0">Nível <span id="level" aria-label="Nível atual"></span></p>
+            <p class="fs-7 text-secondary mb-0"><span id="xp" aria-label="Pontos de experiência"></span> XP</p>
+          </div>
+        </div>
+        <div
+          class="d-flex align-items-center gap-1 fs-8 text-main-green border border-main-green rounded-pill px-2 py-1"
+          role="status" aria-label="Status: Em progresso">
+          <i class="fas fa-trophy" aria-hidden="true"></i>
+          <span>Em progresso</span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center fs-7 text-dark-emphasis mb-1">
+        <span id="progress-title">Progresso para o próximo nível</span>
+        <span aria-live="polite"><span id="xp" aria-label="XP atual"></span>/1000 XP</span>
+      </div>
+      <progress max="1000" value="" class="w-100 rounded-pill" 
+                aria-labelledby="progress-title" 
+                aria-describedby="xp-progress"></progress>
+    </section>
+
+    <h2 class="fw-semibold fs-6 text-dark pb-2">Suas trilhas</h2>
+    <div class="row g-4">
+      <section class="row g-4 sec-matters" role="region" aria-labelledby="trilhas-title">
+        <h3 id="trilhas-title" class="visually-hidden">Lista de matérias disponíveis</h3>
+      </section>
+    </div>
+  </main>
+  
+</body>
+
+</html>

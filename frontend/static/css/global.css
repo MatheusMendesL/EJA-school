@@ -1,0 +1,470 @@
+/* Estilos globais responsivos */
+body {
+    background-color: #f5f6f6;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #4a4a4a;
+    min-height: 100vh;
+}
+
+/* Tema escuro baseado em data-theme="dark" no elemento html */
+html[data-theme="dark"] body {
+    background-color: #0e1116;
+    color: #e6edf3;
+}
+
+html[data-theme="dark"] .bg-white {
+    background-color: #161b22 !important;
+}
+
+html[data-theme="dark"] .text-dark,
+html[data-theme="dark"] .text-dark-emphasis {
+    color: #e6edf3 !important;
+}
+
+html[data-theme="dark"] .text-secondary {
+    color: #9aa4af !important;
+}
+
+html[data-theme="dark"] .text-muted {
+    color: #9aa4af !important;
+}
+
+html[data-theme="dark"] .border,
+html[data-theme="dark"] .border-gray {
+    border-color: #30363d !important;
+}
+
+html[data-theme="dark"] progress::-webkit-progress-bar {
+    background-color: #1f2a33;
+}
+
+html[data-theme="dark"] progress.rounded-full {
+    background-color: #1f2a33;
+}
+
+/* Botão de tema (posicionamento básico) */
+.light-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    cursor: pointer;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.light-dark:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+html[data-theme="dark"] .light-dark {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+html[data-theme="dark"] .light-dark:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Componentes comuns no modo escuro */
+html[data-theme="dark"] .bg-light {
+    background-color: #0f141a !important;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .card-body,
+html[data-theme="dark"] .card-header,
+html[data-theme="dark"] .card-footer,
+html[data-theme="dark"] .section-continue,
+html[data-theme="dark"] .section-performance,
+html[data-theme="dark"] .section-xp,
+html[data-theme="dark"] .p-3.bg-white,
+html[data-theme="dark"] .p-4.bg-white {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+
+/* Inputs e formularios */
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+    background-color: #0f141a !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+html[data-theme="dark"] .form-control::placeholder,
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: #7d8691 !important;
+}
+
+/* Botões gerais */
+html[data-theme="dark"] .btn-outline-secondary,
+html[data-theme="dark"] .btn.btn-outline-secondary,
+html[data-theme="dark"] .btn-year,
+html[data-theme="dark"] .btn-topic {
+    background-color: #161b22 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+html[data-theme="dark"] .btn-outline-secondary:hover,
+html[data-theme="dark"] .btn.btn-outline-secondary:hover,
+html[data-theme="dark"] .btn-year:hover,
+html[data-theme="dark"] .btn-topic:hover {
+    background-color: #1f2430 !important;
+    border-color: #3b3f45 !important;
+}
+
+/* Específicos das páginas */
+/* Lessons */
+html[data-theme="dark"] .btn-teal { /* mantém contraste no escuro */
+    background-color: #15a589 !important;
+    color: #ffffff !important;
+}
+
+/* Task */
+html[data-theme="dark"] .card-custom {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+    color: #e6edf3 !important;
+}
+html[data-theme="dark"] .progress-bg {
+    background-color: #1f2a33 !important;
+}
+html[data-theme="dark"] .form-check-label {
+    border-color: #3b3f45 !important;
+    color: #e6edf3 !important;
+    background-color: #0f141a !important;
+}
+html[data-theme="dark"] .form-check-input:checked + .form-check-label {
+    border-color: #238636 !important; /* verde GitHub-like */
+}
+html[data-theme="dark"] .btn-custom {
+    background-color: #258a74 !important;
+    color: #ffffff !important;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+/* Progress bar styles */
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #d1f2e9;
+}
+
+progress::-webkit-progress-value {
+    background-color: #00b386;
+    border-radius: 9999px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #00b386;
+    border-radius: 9999px;
+}
+
+/* Color utilities */
+.bg-main-light-green {
+    background-color: #d9f6f0;
+}
+
+.bg-main-green {
+    background-color: #00b386;
+}
+
+.text-main-green {
+    color: #00b386;
+}
+
+.border-main-green {
+    border-color: #00b386 !important;
+}
+
+.bg-portugues {
+    background-color: #c7d9ff;
+}
+
+.text-portugues {
+    color: #4a6fff;
+}
+
+.bg-matematica {
+    background-color: #b9e6c7;
+}
+
+.text-matematica {
+    color: #3ca34d;
+}
+
+.bg-historia {
+    background-color: #fff3b8;
+}
+
+.text-historia {
+    color: #d9b200;
+}
+
+.bg-ciencias {
+    background-color: #e6d4ff;
+}
+
+.text-ciencias {
+    color: #a36fff;
+}
+
+/* Progress bar colors */
+progress.rounded-full::-webkit-progress-value {
+    background-color: #00b386;
+    border-radius: 9999px;
+}
+
+progress.rounded-full::-moz-progress-bar {
+    background-color: #00b386;
+    border-radius: 9999px;
+}
+
+/* Estilos de acessibilidade */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Foco visível para acessibilidade */
+*:focus {
+    outline: 2px solid #00b386 !important;
+    outline-offset: 2px !important;
+}
+
+/* Foco para elementos interativos */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus,
+[tabindex]:focus {
+    outline: 2px solid #00b386 !important;
+    outline-offset: 2px !important;
+}
+
+/* Melhor contraste para links */
+a:not(.btn) {
+    text-decoration: underline;
+}
+
+a:not(.btn):hover {
+    text-decoration: none;
+}
+
+/* Estilos para modo escuro - foco */
+html[data-theme="dark"] *:focus {
+    outline: 2px solid #2ea043 !important;
+    outline-offset: 2px !important;
+}
+
+html[data-theme="dark"] button:focus,
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus,
+html[data-theme="dark"] a:focus,
+html[data-theme="dark"] [tabindex]:focus {
+    outline: 2px solid #2ea043 !important;
+    outline-offset: 2px !important;
+}
+
+/* Melhor contraste para texto */
+.text-secondary {
+    color: #6c757d !important;
+}
+
+html[data-theme="dark"] .text-secondary {
+    color: #9aa4af !important;
+}
+
+/* Estilos para elementos de formulário */
+.form-control:focus {
+    border-color: #00b386 !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 179, 134, 0.25) !important;
+}
+
+html[data-theme="dark"] .form-control:focus {
+    border-color: #2ea043 !important;
+    box-shadow: 0 0 0 0.2rem rgba(46, 160, 67, 0.25) !important;
+}
+
+/* Estilos para botões com melhor contraste */
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 179, 134, 0.25) !important;
+}
+
+html[data-theme="dark"] .btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(46, 160, 67, 0.25) !important;
+}
+
+/* Melhor contraste para progress bars */
+progress {
+    border: 1px solid #dee2e6;
+}
+
+html[data-theme="dark"] progress {
+    border: 1px solid #30363d;
+}
+
+/* Estilos para skip links */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #00b386;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Melhor contraste para cards */
+.card {
+    border: 1px solid #dee2e6;
+}
+
+html[data-theme="dark"] .card {
+    border: 1px solid #30363d;
+}
+
+/* Estilos para elementos de lista */
+[role="list"] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+[role="listitem"] {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para elementos de grupo */
+[role="group"] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Estilos para elementos de região */
+[role="region"] {
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    padding: 1rem;
+}
+
+/* Melhor contraste para texto de erro e sucesso */
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.text-success {
+    color: #198754 !important;
+}
+
+html[data-theme="dark"] .text-danger {
+    color: #f85149 !important;
+}
+
+html[data-theme="dark"] .text-success {
+    color: #2ea043 !important;
+}
+
+/* Estilos para elementos de status */
+[role="status"] {
+    font-weight: 600;
+}
+
+/* Estilos para elementos de alerta */
+[aria-live] {
+    font-weight: 500;
+}
+
+/* Melhor contraste para elementos desabilitados */
+:disabled,
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Estilos para elementos de navegação */
+nav[aria-label] {
+    font-size: 0.875rem;
+}
+
+/* Estilos para elementos de formulário com erro */
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-control.is-valid {
+    border-color: #198754;
+}
+
+html[data-theme="dark"] .form-control.is-invalid {
+    border-color: #f85149;
+}
+
+html[data-theme="dark"] .form-control.is-valid {
+    border-color: #2ea043;
+}
+
+progress.rounded-full {
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+}
+
+.progress-historia::-webkit-progress-value {
+    background-color: #d9b200;
+}
+
+.progress-historia::-moz-progress-bar {
+    background-color: #d9b200;
+}
+
+.progress-ciencias::-webkit-progress-value {
+    background-color: #a36fff;
+}
+
+.progress-ciencias::-moz-progress-bar {
+    background-color: #a36fff;
+}

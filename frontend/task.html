@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa - Estudadores</title>
+    <meta name="description" content="Página de exercícios interativos para estudantes do EJA">
+    
+</head>
+<body>
+  <div class="container-fluid px-3 py-4">
+    <header class="d-flex justify-content-between align-items-center small mb-4 lesson-header">
+      <a href="#" class="d-inline-flex align-items-center text-secondary text-sm fw-normal text-decoration-none"
+        id="back" role="button" aria-label="Voltar para a página anterior">
+        <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>
+        Voltar
+      </a>
+    </header>
+
+    <section class="card-custom p-3 mb-4" role="region" aria-labelledby="progress-title">
+      <div class="d-flex justify-content-between mb-2 small fw-semibold">
+        <span id="progress-title">Progresso da lição</span>
+        <span class="text-muted small" aria-live="polite">
+          <span id="number" aria-label="Questão atual">1</span> de 10
+        </span>
+      </div>
+      <div class="progress-bg" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da lição">
+        <div class="progress-fill"></div>
+      </div>
+    </section>
+
+    <main class="card-custom p-4" role="main">
+      <h2 class="fw-semibold mb-4 fs-6" id="question-title">
+        <span id="question"></span>
+      </h2>
+
+      <form class="vstack gap-3" role="form" aria-labelledby="question-title">
+        <fieldset>
+          <legend class="visually-hidden">Opções de resposta</legend>
+          <div class="form-check">
+            <input class="form-check-input d-none" type="radio" name="answer" id="A" value="A" aria-describedby="optionA">
+            <label class="form-check-label" for="A" id="optionA" role="button" tabindex="0" aria-describedby="optionA-desc"></label>
+            <div id="optionA-desc" class="visually-hidden">Opção A</div>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input d-none" type="radio" name="answer" id="B" value="B" aria-describedby="optionB">
+            <label class="form-check-label" for="B" id="optionB" role="button" tabindex="0" aria-describedby="optionB-desc"></label>
+            <div id="optionB-desc" class="visually-hidden">Opção B</div>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input d-none" type="radio" name="answer" id="C" value="C" aria-describedby="optionC">
+            <label class="form-check-label" for="C" id="optionC" role="button" tabindex="0" aria-describedby="optionC-desc"></label>
+            <div id="optionC-desc" class="visually-hidden">Opção C</div>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input d-none" type="radio" name="answer" id="D" value="D" aria-describedby="optionD">
+            <label class="form-check-label" for="D" id="optionD" role="button" tabindex="0" aria-describedby="optionD-desc"></label>
+            <div id="optionD-desc" class="visually-hidden">Opção D</div>
+          </div>
+        </fieldset>
+
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-custom fw-semibold w-100 py-3 mt-3 btn_submit" 
+                  aria-describedby="submit-help">
+            Confirmar resposta
+          </button>
+          <button type="button" class="btn btn-custom fw-semibold w-100 py-3 mt-3 btn_forward d-none"
+                  aria-describedby="forward-help">
+            Avançar
+          </button>
+        </div>
+        
+      </form>
+    </main>
+  </div>
+</body>
