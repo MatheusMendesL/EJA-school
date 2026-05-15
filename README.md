@@ -37,6 +37,9 @@ cd backend
 # Install dependencies
 npm install
 
+# Enter into the correct path
+cd backend
+
 # Start the backend server
 node server.js
 
