@@ -21,7 +21,6 @@ function get_user_data(data) {
 }
 
 function signup(data) {
-  // resolve é caso ser resolvido e reject se for rejeitado por um motivo, como !data e error = true
   return new Promise((resolve, reject) => {
     if (!data) return reject(new Error("You need to put data"));
 

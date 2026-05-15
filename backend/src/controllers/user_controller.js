@@ -3,8 +3,6 @@ const { response } = require("../utils/functions");
 const jwt = require("jsonwebtoken");
 const SECRET_KEY = require("../config/config_jwt");
 
-// todas serão dessa forma
-
 async function get_user(req, res) {
   const get_data = {
     id: req.params.id,

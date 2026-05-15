@@ -44,5 +44,4 @@ async function get_task_by_id(req, res) {
 module.exports = {
   get_task_by_id,
   get_tasks,
-  
 };

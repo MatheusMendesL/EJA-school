@@ -5,7 +5,6 @@ const cors = require("cors");
 
 const app = express();
 
-// routers
 const userRouter = require("./src/routers/user_router");
 const matterRouter = require("./src/routers/matter_router");
 const lessonRouter = require("./src/routers/lesson_router");
