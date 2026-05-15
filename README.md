@@ -1,5 +1,3 @@
--- I didnt finished the docker yet
-
 # Estudadores.edu
 *A platform for adult education (EJA) for users over 18 years old*
 
@@ -42,17 +40,5 @@ npm install
 # Start the backend server
 node server.js
 
-```
-# Docker commands 
-if you want to run with docker, use this commands
-```bash
-# First you need to configure the .env of the project with the data od the server
-# After that you need to remove the comments in the /backend/src/config/config_sql.js
-
-# And you can create the image
-docker build -t estudadores-backend ./backend
-
-# Now you can start the system
-docker-compose up -d
 ```
 
